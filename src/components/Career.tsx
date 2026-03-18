@@ -15,43 +15,43 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Full Stack Developer</h4>
-                <h5>Ikshan</h5>
+                <h4>Software Developer</h4>
+                <h5>Corelto Next Gen Pvt. Ltd</h5>
               </div>
-              <h3>2020</h3>
+              <h3>Present</h3>
             </div>
             <p>
-              Built 6+ complete applications using React.js. Integrated backend
-              authentication using Node.js & MongoDB. Created responsive UI/UX
-              and designed wireframes using Figma.
+              Developed a scalable Real Estate CRM platform that streamlined pre-sales and post-sales
+              workflows. Built an automated Broker Settlement & Commission tool, managing commissions,
+              billing, and reconciliations to eliminate manual financial tracking.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Senior Full Stack Developer</h4>
-                <h5>Monocept (Max Life Insurance)</h5>
+                <h4>Associate Software Engineer</h4>
+                <h5>Atharva Systems</h5>
               </div>
-              <h3>2021</h3>
+              <h3>2023</h3>
             </div>
             <p>
-              Led two development teams on Mpro, a large-scale insurance
-              operations platform. Developed multiple modules using React.js &
-              migrated critical functionalities to Node.js microservices.
+              Built and maintained Rails applications, improving engagement and responsiveness by 20%.
+              Optimized SQL queries, reducing average page load time by 30%. Integrated third-party
+              APIs to enhance reliability and data synchronization.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Full Stack Developer</h4>
-                <h5>Logic Loop</h5>
+                <h4>Junior ROR Developer</h4>
+                <h5>VirtueInfo</h5>
               </div>
-              <h3>NOW</h3>
+              <h3>2022</h3>
             </div>
             <p>
-              Building Solid, a proprietary low-code platform using Angular,
-              Next.js & NestJS. Delivering production-ready CMS-based projects
-              including e-commerce, CRM, and import-export automation systems.
+              Developed RESTful APIs and increased test coverage by 40% using RSpec. Reduced
+              production defects by 20% by implementing static code analysis using RuboCop and
+              conducting structured code reviews.
             </p>
           </div>
         </div>

@@ -56,6 +56,18 @@ const setCharacter = (
             character!.getObjectByName("footR")!.position.y = 3.36;
             character!.getObjectByName("footL")!.position.y = 3.36;
 
+            const headBone = character.getObjectByName("spine006");
+            if (headBone) {
+              const textureLoader = new THREE.TextureLoader();
+              const faceTexture = textureLoader.load("/images/harsh.jpg");
+              const faceMat = new THREE.MeshStandardMaterial({ map: faceTexture, roughness: 0.8 });
+              const faceGeo = new THREE.CircleGeometry(0.12, 32);
+              const faceMesh = new THREE.Mesh(faceGeo, faceMat);
+              // Position it slightly in front of the face
+              faceMesh.position.set(0, 0.1, 0.1);
+              headBone.add(faceMesh);
+            }
+
             // Monitor scale is handled by GsapScroll.ts animations
 
             dracoLoader.dispose();
