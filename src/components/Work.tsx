@@ -27,6 +27,11 @@ const projects = [
 const Work = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  
+  // Swipe State
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchEndX, setTouchEndX] = useState<number | null>(null);
+  const minSwipeDistance = 50;
 
   const goToSlide = useCallback(
     (index: number) => {
@@ -49,6 +54,28 @@ const Work = () => {
       currentIndex === projects.length - 1 ? 0 : currentIndex + 1;
     goToSlide(newIndex);
   }, [currentIndex, goToSlide]);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEndX(null); 
+    setTouchStartX(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEndX(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStartX || !touchEndX) return;
+    const distance = touchStartX - touchEndX;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      goToNext();
+    } else if (isRightSwipe) {
+      goToPrev();
+    }
+  };
 
   return (
     <div className="work-section" id="work">
@@ -77,7 +104,12 @@ const Work = () => {
           </button>
 
           {/* Slides */}
-          <div className="carousel-track-container">
+          <div 
+            className="carousel-track-container"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             <div
               className="carousel-track"
               style={{
@@ -85,7 +117,7 @@ const Work = () => {
               }}
             >
               {projects.map((project, index) => (
-                <div className="carousel-slide" key={index}>
+                <div className="carousel-slide" key={index} style={{ width: "100%" }}>
                   <div className="carousel-content">
                     <div className="carousel-info">
                       <div className="carousel-number">

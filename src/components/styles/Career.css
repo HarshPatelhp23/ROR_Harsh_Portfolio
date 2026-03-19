@@ -215,8 +215,8 @@
 
   .career-section h2 {
     width: 100%;
-    font-size: 45px;
-    line-height: 45px;
+    font-size: 40px;
+    line-height: 48px;
     margin-top: 0px;
   }
 
@@ -225,12 +225,12 @@
   }
 
   .career-info h3 {
-    font-size: 33px;
+    font-size: 28px;
   }
 
   .career-info-in,
   .career-info-box p {
-    padding-left: 5%;
+    padding-left: 12%;
   }
 
   .career-section {
